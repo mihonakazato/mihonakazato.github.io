@@ -1,0 +1,10 @@
+<svg id="ico_facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="26" viewBox="0 0 14 26">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_11" data-name="長方形 11" width="14" height="26" transform="translate(0 -0.401)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="グループ_5" data-name="グループ 5" transform="translate(0 0.401)" clip-path="url(#clip-path)">
+    <path id="パス_43" data-name="パス 43" d="M11.555,4.208h2V.309A24.361,24.361,0,0,0,10.006,0C6.387,0,4.022,2.193,4.022,6.163v3.49H0v4.579H4.022V25.3a16.009,16.009,0,0,0,4.951,0V14.233h3.691l.7-4.579H8.973V6.682a2.29,2.29,0,0,1,2.582-2.474" fill="#fff"/>
+  </g>
+</svg>

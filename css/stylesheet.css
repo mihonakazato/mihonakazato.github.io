@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.share {
+  width: 100px;
+  height: 100px;
+  color: white;
+  background-color: black;
+}
