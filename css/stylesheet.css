@@ -14,6 +14,7 @@ body {
 
 section {
   margin:0 10px 100px 0;
+  animation: fadeUpAnime 2s forwards; 
 }
 
 img {
@@ -31,9 +32,15 @@ ul {
   list-style: none;
 }
 
+article,
+section,
 h1,
 h2,
+h4,
+div,
 p,
+ul,
+li,
 small {
   margin: 0;
 }
@@ -41,7 +48,7 @@ small {
 .main {
   max-width: 1284px;
   margin: 0 auto;
-  padding: 20px 100px;
+  padding: 30px;
 }
 
 .section-title h2 {
@@ -79,6 +86,7 @@ small {
   /* ビューポートに合わせる */
   height: 100vh;
   position: relative;
+  animation: fadeInAnime 3s forwards;
 }
 
 #header::after {
@@ -156,18 +164,23 @@ small {
 
 /* reception */
 .reception {
-  padding: 17px 25px 25px 25px;
+  padding: 30px 30px 50px 30px;
   background-color: #fff;
-  /* margin: 50px 10px; */
+  margin: 50px 10px;
+}
+
+.reception ul li {
+  margin-bottom: 20px;
 }
 
 .reception ul li h4 {
+  width: 100%;
   font-size:1rem; /* 16px */
   font-weight: normal;
   text-align: center;
-  padding: 6px 0;
-  margin: 15px 0 10px 0;
-  border: 1px solid black;
+  padding: 5px 10px;
+  margin: 0 auto 10px;
+  border: 1px solid #17161a;
 }
 
 .reception ul li p {
@@ -217,9 +230,10 @@ small {
 #schedule ul li .schedule__city {
   color: #E5E5E5;
   position: absolute;
-  right: 23px;
+  right: 15px;
   bottom: 10px;
-  font-size: 2.5rem; /* 40px */
+  font-size: 32px;
+  font-weight: bold;
 }
 
 #schedule ul li .schedule__date .schedule__link {
@@ -396,5 +410,80 @@ footer {
   }
   100% {
     background: #F8F8F8;
+  }
+}
+
+@keyframes fadeInAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUpAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(min-width: 768px) {
+  .main {
+    padding: 20px 100px;
+  }
+
+  .reception {
+    padding: 60px;
+    margin-top: 50px;
+  }
+
+  .reception ul li {
+    display: flex;
+    align-items: center;
+    vertical-align: bottom;
+  }
+
+  .reception ul li h4 {
+    line-height: 156px;
+    margin: 0;
+    width: 200px;
+    vertical-align: bottom;
+  }
+
+  .reception ul li p {
+    padding-left: 10px;
+  }
+
+  .reception__sp {
+    display: none;
+  }
+
+  .schedule__sp {
+    display: none;
+  }
+
+  #schedule ul li .schedule__city {
+    position: absolute;
+    right: 20px;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  #ticket ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  #ticket ul li .ticket__price span {
+    font-size: 46px;
   }
 }
