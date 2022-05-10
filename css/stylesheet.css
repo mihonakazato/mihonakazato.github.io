@@ -1,0 +1,400 @@
+@charset "UTF-8";
+
+/* common */
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  animation: bgchange 25s infinite;
+}
+
+section {
+  margin:0 10px 100px 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+p,
+small {
+  margin: 0;
+}
+
+.main {
+  max-width: 1284px;
+  margin: 0 auto;
+  padding: 20px 100px;
+}
+
+.section-title h2 {
+  display: flex;
+  align-items: center;
+  font-size: 2.19rem;
+  padding-bottom: 17px;
+}
+
+.section-title h2::after {
+  border: 2px solid black;
+  content: "";
+  width: 100%;
+  margin-left: 20px;
+}
+
+.btn {
+  color: white;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.notes {
+  font-size: 0.75rem;
+  margin: 10px 0 30px 0;
+  line-height: 22px;
+}
+
+.notes a {
+  color: #ff6aaa;
+}
+
+/* header */
+#header {
+  /* ビューポートに合わせる */
+  height: 100vh;
+  position: relative;
+}
+
+#header::after {
+  content: "";
+  transition: all 0.3s;
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#header .header__image {
+  /* 中央寄せ */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#header .header__image h1 img {
+  /* 親要素の100% */
+  max-width: 100%;
+  width: auto;
+}
+
+.header__menu {
+  font-size: 1rem; /* 16px */
+  text-align: right;
+  position: fixed;
+  top: 20px;
+  right: 15px;
+  z-index: 10;
+}
+
+.header__menu-link {
+  font-weight: bold;
+  color: #000000;
+  line-height: 34px;
+}
+
+#header .header__menu ul li .header__menu-top:hover {
+  color: #959595;
+}
+#header .header__menu ul li .header__menu-schedule:hover,
+#schedule h2 {
+  color: #ff6b51;
+}
+#header .header__menu ul li .header__menu-ticket:hover,
+#ticket h2 {
+  color: #ff6aaa;
+}
+#header .header__menu ul li .header__menu-guideline:hover,
+#guideline h2 {
+  color: #959595;
+}
+
+/* title */
+.title {
+  text-align: center;
+}
+
+.title h2 {
+  font-size: 2.19rem; /* 35px */
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.title p {
+  font-size: 1.25rem; /* 20px */
+  line-height: 2.8;
+}
+
+/* reception */
+.reception {
+  padding: 17px 25px 25px 25px;
+  background-color: #fff;
+  /* margin: 50px 10px; */
+}
+
+.reception ul li h4 {
+  font-size:1rem; /* 16px */
+  font-weight: normal;
+  text-align: center;
+  padding: 6px 0;
+  margin: 15px 0 10px 0;
+  border: 1px solid black;
+}
+
+.reception ul li p {
+  font-size: 1rem; /* 16px */
+}
+
+.reception .reception__btn {
+  font-size: 0.9rem;
+  display: block;
+  height: 40px;
+  width: 300px;
+  line-height: 40px;
+  background-color: black;
+  margin: 45px auto 20px;
+}
+
+.reception .reception__btn:hover {
+  background-color: #ff6aaa;
+}
+
+/* schedule */
+#schedule .section-title h2::after {
+  border-color: #ff6b51;
+}
+
+#schedule ul li,
+#ticket ul li {
+  border: 1px solid black;
+  padding: 20px;
+  position: relative;
+  background-color: #fff;
+}
+
+#schedule ul li + li {
+  border-top: none;
+}
+
+#schedule ul li .schedule__date {
+  font-size: 1.13rem;
+  font-weight: bold;
+}
+
+#schedule ul li .schedule__time {
+  font-size: 0.88rem;
+}
+
+#schedule ul li .schedule__city {
+  color: #E5E5E5;
+  position: absolute;
+  right: 23px;
+  bottom: 10px;
+  font-size: 2.5rem; /* 40px */
+}
+
+#schedule ul li .schedule__date .schedule__link {
+  font-weight: normal;
+  padding: 5px 20px;
+  margin-left: 10px;
+  background-color: #ff6b51;
+  font-size: 0.94rem;
+  vertical-align: top;
+}
+
+#schedule ul li .schedule__date .schedule__link:hover{
+  background-color: gray;
+}
+
+/* ticket */
+#ticket .section-title h2::after {
+  border-color: #ff6aaa;
+}
+
+#ticket ul li .ticket__type {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#ticket ul li .ticket__limited-icon {
+  position: relative;
+  margin-right: 20px;
+  background-color: #FF5050;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+#ticket ul li .ticket__limited-icon span {
+  font-size: 0.75rem;
+  color: white;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%);
+  width: 80px;
+  text-align: center;
+}
+
+#ticket ul li .ticket__price {
+  font-size: 0.94rem;
+  text-align: right;
+}
+
+#ticket ul li .ticket__price span {
+  font-size: 2.19rem;
+  font-weight: bold;
+}
+
+/* guideline */
+#guideline .section-title h2::after {
+  border-color: #959595;
+}
+
+/* goods */
+
+#goods .section-title h2 {
+  color: #5FDB64;
+}
+
+#goods .section-title h2::after {
+  border-color: #5FDB64;
+}
+
+#goods .goods__message {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #959595;
+}
+
+/* official-website */
+.official-website {
+  margin-top: 100px;
+  padding: 30px 10px;
+  text-align: center;
+  border: 1px solid black;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  background-color: inherit;
+}
+
+.official-website::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #FF5050;
+  z-index: -1;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.official-website:hover::before {
+  width: 100%;
+}
+
+.official-website a {
+  display: block;
+}
+
+.official-website a span {
+  font-size: 30px;
+}
+
+/* footer */
+footer {
+  padding: 30px 10px 140px;
+  text-align: center;
+  font-size: 0.75rem;
+}
+/* share */
+.fadein {
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 2%;
+  left: 1.5%;
+  padding: 18px 10px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.share {
+  writing-mode: vertical-rl;
+  padding-bottom: 5px;
+}
+
+.share-icon {
+  padding-top: 10px;
+}
+
+/* toTop */
+.toTop {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  text-align: right;
+}
+
+.toTop a::before {
+  background-image: url(../img/pageto_text.svg);
+}
+
+/* keyframes */
+@keyframes bgchange {
+  0% {
+    background: #F8F8F8;
+  }
+  25% {
+    background: #d5efff;
+  }
+  50% {
+    background: #ffffc4;
+  }
+  75% {
+    background: #ffe2dc;
+  }
+  90% {
+    background: #ffe1c7;
+  }
+  100% {
+    background: #F8F8F8;
+  }
+}
