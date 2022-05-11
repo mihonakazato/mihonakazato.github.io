@@ -12,9 +12,19 @@ body {
   animation: bgchange 25s infinite;
 }
 
-section {
+.fadeIn {
   margin:0 10px 100px 0;
-  animation: fadeUpAnime 2s forwards; 
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+/* スクロール時に入るクラス */
+.scrollIn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 
 img {
