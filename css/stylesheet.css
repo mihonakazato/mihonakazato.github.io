@@ -12,8 +12,13 @@ body {
   animation: bgchange 25s infinite;
 }
 
-.fadeIn {
+section {
   margin:0 10px 100px 0;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+.fadeIn {  
   opacity: 0;
   visibility: hidden;
   transform: translateY(30px);
@@ -57,8 +62,11 @@ small {
 
 .main {
   max-width: 1284px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .section-title h2 {
@@ -97,6 +105,7 @@ small {
   height: 100vh;
   position: relative;
   animation: fadeInAnime 3s forwards;
+  z-index: 10;
 }
 
 #header::after {
@@ -131,7 +140,6 @@ small {
   position: fixed;
   top: 20px;
   right: 15px;
-  z-index: 10;
 }
 
 .header__menu-link {
@@ -325,7 +333,7 @@ small {
 
 /* official-website */
 .official-website {
-  margin-top: 100px;
+  margin-top: 200px;
   padding: 30px 10px;
   text-align: center;
   border: 1px solid black;
@@ -369,32 +377,43 @@ footer {
   font-size: 0.75rem;
 }
 /* share */
-.fadein {
+.share-menu {
   background-color: black;
   color: white;
   position: fixed;
   bottom: 2%;
   left: 1.5%;
-  padding: 18px 10px;
+  padding: 20px 10px;
   border-radius: 22px;
   text-align: center;
+  z-index: 10;
 }
 
-.share {
+.share-menu .share {
   writing-mode: vertical-rl;
   padding-bottom: 5px;
 }
 
-.share-icon {
-  padding-top: 10px;
+.share-menu .share-icon {
+  padding-top: 13px;
+}
+
+.share-menu .share-icon img {
+  transition-duration: 0.3s;
+}
+
+.share-menu .share-icon:hover img {
+  opacity: 0.6;
+  transition-duration: 0.3s;
 }
 
 /* toTop */
 .toTop {
   position: fixed;
-  bottom: 10%;
-  right: 10%;
+  bottom: 50px;
+  right: 50px;
   text-align: right;
+  z-index: 10;
 }
 
 .toTop a::before {
