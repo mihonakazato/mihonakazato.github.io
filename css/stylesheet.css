@@ -371,7 +371,7 @@ small {
   width: 60px;
   height: 40px;
   position: absolute;
-  top: 40px;
+  top: 40%;
   left: 40px;
   transition: 0.3s;
 }
@@ -398,20 +398,22 @@ footer {
 }
 /* share */
 .share-menu {
+  display: inline-block;
   background-color: black;
   color: white;
   position: fixed;
   bottom: 2%;
   left: 1.5%;
-  padding: 25px 8px;
-  border-radius: 22px;
+  padding: 25px 12px;
+  border-radius: 25px;
   text-align: center;
+  vertical-align: center;
   z-index: 10;
 }
 
 .share-menu .text {
   writing-mode: vertical-rl;
-  padding-bottom: 5px;
+  padding:0 0 5px 4px;
 }
 
 .share-menu .share-icon {
@@ -505,7 +507,9 @@ footer {
 @media(min-width: 768px) {
   /* common */
   .main {
+    max-width: 90%;
     padding: 20px 100px;
+    margin: 0 auto;
   }
 
   .section-title h2 {
@@ -586,5 +590,28 @@ footer {
 
   #ticket ul li .ticket__price span {
     font-size: 46px;
+  }
+
+  /* official web-site */
+  .official-website {
+    margin-top: 250px;
+    padding: 60px 10px;
+  }
+  
+  .official-website a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 20px;
+  }
+  
+  .official-website a span {
+    font-size: 40px;
+    padding-right: 10px;
+  }
+
+  /* footer */
+  footer {
+    padding: 30px 10px 140px;
   }
 }
