@@ -21,4 +21,17 @@ $(function() {
         $('body, html').animate({scrollTop: targetPosition}, 400);
         return false;
     });
+
+    //回転
+    document.querySelector('.toTopText').animate(
+        [
+            { transform: 'rotate(360deg)'},
+            { transform: 'rotate(0deg)'}
+        ],
+        {
+            duration: 9000,
+            easing: 'linear',
+            iterations: Infinity
+        }
+    );
 });
