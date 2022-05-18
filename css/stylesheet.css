@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+
+
 /* common */
 html {
   height: 100%;
@@ -7,14 +9,14 @@ html {
 }
 
 body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
   margin: 0;
   height: 100%;
   animation: bgchange 25s infinite;
 }
 
 section {
-  margin:0 10px 100px 0;
-  padding-top: 60px;
+  margin-top: 105px;
   z-index: 1;
 }
 
@@ -37,6 +39,7 @@ img {
 }
 
 a {
+  color:black;
   text-decoration: none;
   transition-property: all;
   transition-duration: 0.3s;
@@ -48,7 +51,6 @@ ul {
 }
 
 article,
-section,
 h1,
 h2,
 h4,
@@ -60,11 +62,15 @@ small {
   margin: 0;
 }
 
+.font-agenda {
+  font-family: agenda, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .main {
-  max-width: 1284px;
   width: 100%;
-  margin: 0 auto;
-  padding: 30px;
+  padding: 0 30px;
   position: relative;
   z-index: 1;
 }
@@ -72,12 +78,12 @@ small {
 .section-title h2 {
   display: flex;
   align-items: center;
-  font-size: 2.19rem;
-  padding-bottom: 17px;
+  font-size: 2.2rem;
+  padding-bottom: 25px;
 }
 
 .section-title h2::after {
-  border: 2px solid black;
+  border: 1.5px solid black;
   content: "";
   width: 100%;
   margin-left: 20px;
@@ -101,7 +107,6 @@ small {
 
 /* header */
 #header {
-  /* ビューポートに合わせる */
   height: 100vh;
   position: relative;
   animation: fadeInAnime 3s forwards;
@@ -121,7 +126,6 @@ small {
 }
 
 #header .header__image {
-  /* 中央寄せ */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -129,7 +133,6 @@ small {
 }
 
 #header .header__image h1 img {
-  /* 親要素の100% */
   max-width: 100%;
   width: auto;
 }
@@ -138,14 +141,13 @@ small {
   font-size: 1rem; /* 16px */
   text-align: right;
   position: fixed;
-  top: 20px;
-  right: 15px;
+  top: 18px;
+  right: 19px;
 }
 
 .header__menu-link {
-  font-weight: bold;
   color: #000000;
-  line-height: 34px;
+  line-height: 30px;
 }
 
 #header .header__menu ul li .header__menu-top:hover {
@@ -170,21 +172,20 @@ small {
 }
 
 .title h2 {
-  font-size: 2.19rem; /* 35px */
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 25px;
 }
 
 .title p {
-  font-size: 1.25rem; /* 20px */
-  line-height: 2.8;
+  font-size: 0.95rem;
+  line-height: 2.2;
 }
 
 /* reception */
 .reception {
   padding: 30px 30px 50px 30px;
   background-color: #fff;
-  margin: 50px 10px;
 }
 
 .reception ul li {
@@ -199,6 +200,7 @@ small {
   padding: 5px 10px;
   margin: 0 auto 10px;
   border: 1px solid #17161a;
+  vertical-align: middle;
 }
 
 .reception ul li p {
@@ -206,13 +208,13 @@ small {
 }
 
 .reception .reception__btn {
-  font-size: 0.9rem;
+  font-size: 1rem;
   display: block;
-  height: 40px;
+  height: 45px;
   width: 300px;
-  line-height: 40px;
+  line-height: 45px;
   background-color: black;
-  margin: 45px auto 20px;
+  margin: 45px auto 8px;
 }
 
 .reception .reception__btn:hover {
@@ -249,18 +251,21 @@ small {
   color: #E5E5E5;
   position: absolute;
   right: 15px;
-  bottom: 10px;
-  font-size: 32px;
-  font-weight: bold;
+  bottom: 15px;
+  font-size: 40px;
+  font-weight: 900;
+  z-index: 1;
 }
 
 #schedule ul li .schedule__date .schedule__link {
+  position: relative;
   font-weight: normal;
-  padding: 5px 20px;
+  padding: 7px 20px;
   margin-left: 10px;
   background-color: #ff6b51;
-  font-size: 0.94rem;
+  font-size: 0.8rem;
   vertical-align: top;
+  z-index: 10;
 }
 
 #schedule ul li .schedule__date .schedule__link:hover{
@@ -362,8 +367,23 @@ small {
   width: 100%;
 }
 
+.official-website .pageToArrow {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  transition: 0.3s;
+}
+
+.official-website:hover .pageToArrow {
+  transform: translateX(-20%);
+  transition: 0.3s;
+}
+
 .official-website a {
   display: block;
+  font-weight: normal;
 }
 
 .official-website a span {
@@ -372,7 +392,7 @@ small {
 
 /* footer */
 footer {
-  padding: 30px 10px 140px;
+  padding: 30px 10px 190px;
   text-align: center;
   font-size: 0.75rem;
 }
@@ -383,19 +403,19 @@ footer {
   position: fixed;
   bottom: 2%;
   left: 1.5%;
-  padding: 20px 10px;
+  padding: 25px 8px;
   border-radius: 22px;
   text-align: center;
   z-index: 10;
 }
 
-.share-menu .share {
+.share-menu .text {
   writing-mode: vertical-rl;
   padding-bottom: 5px;
 }
 
 .share-menu .share-icon {
-  padding-top: 13px;
+  padding-top: 15px;
 }
 
 .share-menu .share-icon img {
@@ -409,15 +429,24 @@ footer {
 
 /* toTop */
 .toTop {
+  text-align: right;
+}
+
+.toTop a {
   position: fixed;
   bottom: 50px;
-  right: 50px;
-  text-align: right;
+  right: 40px;
+  display: block;
   z-index: 10;
 }
 
-.toTop a::before {
-  background-image: url(../img/pageto_text.svg);
+.toTop .toTopText {
+  width: 80px;
+  height: auto;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  /* animation: 8s linear infinite spin; */
 }
 
 /* keyframes */
@@ -463,10 +492,40 @@ footer {
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+/* PC */
 @media(min-width: 768px) {
+  /* common */
   .main {
     padding: 20px 100px;
   }
+
+  .section-title h2 {
+    font-size: 3.2rem;
+  }
+
+  .section-title h2::after {
+    border: 2.5px solid black;
+  }
+
+  /* title */
+  .title h2 {
+    font-size: 2.2rem;
+  }
+
+  .title p {
+    font-size: 1.3rem;
+  }
+
+  /* reception */
 
   .reception {
     padding: 60px;
@@ -474,16 +533,17 @@ footer {
   }
 
   .reception ul li {
-    display: flex;
+    width: 100%;
+    display: table;
     align-items: center;
-    vertical-align: bottom;
+    vertical-align: middle;
   }
 
   .reception ul li h4 {
-    line-height: 156px;
+    display: table-cell;
     margin: 0;
     width: 200px;
-    vertical-align: bottom;
+    vertical-align: middle;
   }
 
   .reception ul li p {
@@ -494,15 +554,27 @@ footer {
     display: none;
   }
 
+   /* schedule */
+
   .schedule__sp {
     display: none;
   }
 
+  #schedule 
+
+  #schedule ul li .schedule__date {
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+  }
+  
+  #schedule ul li .schedule__time {
+    font-size: 0.88rem;
+  }
+
   #schedule ul li .schedule__city {
     position: absolute;
-    right: 20px;
-    top: 45%;
-    transform: translateY(-50%);
+    top: 25px;
+    right: 15px;
   }
 
   #ticket ul li {
