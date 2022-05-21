@@ -1,0 +1,987 @@
+@import "reset";
+@import "mixin";
+// @import "icon";
+
+
+
+@import url("https://use.typekit.net/wtr6rcx.css");
+.f-agenda--l {
+    font-family: agenda, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.f-agenda {
+    font-family: agenda, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.f-agenda--b {
+    font-family: agenda, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+
+$colorBlack: #17161a;
+$colorWhite: #fff;
+$colorLightGray: #F8F8F8;
+$colorGray: #959595;
+$colorBlue: #57dadc;
+$colorOrange:#ff6b51;
+$colorPink:#ff6aaa;
+$colorGreen:#5FDB64;
+$colorRed:#FF5050;
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.5;
+    // background-color: $colorLightGray;
+    animation: bg-color 25s infinite;
+    // background: linear-gradient(45deg, #C6D1E3, #FCC7E4);
+    // background-size: 200% 200%;
+    color: #000000;
+    font-family: YuGothic, "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    
+    // animation: bggradient 20s ease infinite;
+
+    display:none;
+}
+
+@keyframes bg-color {
+  0%   {background:#F8F8F8;}/*変化させたい色*/
+  25%  {background:#d5efff;}/*変化させたい色*/
+  50%  {background:#ffffc4;}/*変化させたい色*/
+  75%  {background:#ffe2dc;}/*変化させたい色*/
+  90%  {background:#ffe1c7;}/*変化させたい色*/
+  100% {background:#F8F8F8;}/*変化させたい色*/
+}
+
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    display: inline-block;
+    color: #000000;
+    &:hover{
+        opacity: 0.7;
+        // color: #f700ff;
+    }
+}
+img{
+    width: auto;
+    max-width: 100%;
+}
+
+
+.f-small{
+    font-size: 15px;
+    line-height: 1.5rem;
+    display: inline-block;
+}
+
+
+
+.ari_song__pc{}
+.ari_song__sp{
+  display: none !important;
+}
+@include mq() {
+  .ari_song__pc{
+    display: none !important;
+  }
+  .ari_song__sp{
+    display: block !important;
+  }
+}
+
+
+
+/*====================*/
+/*margin*/
+/*====================*/
+.mt-0{
+    margin-top: 0 !important;
+}
+.mb-30{
+    margin-bottom: 30px !important;
+}
+.mt-20{
+    margin-top: 20px !important;
+}
+.mt-30{
+    margin-top: 30px !important;
+}
+.mt-50{
+    margin-top: 50px !important;
+}
+.mt-100{
+  margin-top: 100px !important;
+}
+
+
+/*====================*/
+/*row*/
+/*====================*/
+.row{
+    display: flex;
+    align-items: flex-start;
+    // justify-content: space-between;
+    flex-wrap: wrap;
+}
+.note{
+  font-size: 12px;
+}
+
+
+
+.ari_song__article{
+  max-width: 1284px;
+  margin: 0 auto;
+  padding: 20px 100px;
+  @include mq() {
+    padding: 30px;
+  }
+}
+section{
+  margin-bottom: 100px;
+}
+
+
+.ari_song__heading{
+  margin-bottom: 20px;
+  h2{
+    color: $colorBlack;
+    font-size: 50px;
+    position: relative;
+    span{
+      // background-color: $colorLightGray;
+      animation: bg-color 25s infinite;
+      padding-right: 20px;
+      position: relative;
+      z-index: 3;
+    }
+    &::before{
+      content: "";
+      transition: all 0.3s;
+      display: inline-block;
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      top:50%;
+      left: 0;
+      transform: translate(0, -50%);
+      background-color: $colorBlack;
+    }
+  }
+  @include mq() {
+    h2{
+      font-size: 35px;
+      &::before{
+        height: 3px;
+      }
+    }
+  }
+}
+
+
+
+
+
+/*====================*/
+/*header*/
+/*====================*/
+#header{
+  position: relative;
+  height: 100vh;
+  &::after{
+    content: "";
+    transition: all 0.3s;
+    background-color: $colorLightGray;
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+  .ari_song__header-inner{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    
+  }
+  .menu{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    text-align: right;
+    z-index: 99;
+    ul{
+      li{
+        margin-bottom: 5px;
+        font-weight: bold;
+
+        span{
+          display: inline-block;
+          color: $colorGray;
+        }
+        a{
+          &:hover{
+            &.menu--top{
+              color: $colorGray;
+            }
+            &.menu--news{
+              color: $colorBlue;
+            }
+            &.menu--schedule{
+              color: $colorOrange;
+            }
+            &.menu--ticket{
+              color: $colorPink;
+            }
+            &.menu--guidelin{
+              color: $colorGray;
+            }
+            &.menu--goods{
+              color: $colorGreen;
+            }
+          }
+        }
+        
+
+      }
+    }
+  }
+}
+
+/*====================*/
+/*概要*/
+/*====================*/
+.ari_song__message{
+  .caption{
+    text-align: center;
+    h2{
+      font-size: 35px;
+      font-weight: bold;
+    }
+    p{
+      font-size: 20px;
+      line-height: 3rem;
+      margin-top: 20px;
+    }
+    @include mq() {
+          h2{
+            font-size: 4vw;
+          }
+          p{
+            font-size: 15px;
+            line-height: 2rem;
+          }
+    }
+    @include mq(sm) {
+      p{
+        font-size: 3.5vw;
+        line-height: 1.4rem;
+      }
+    }
+  }
+  .reception{
+    background-color: $colorWhite;
+    padding: 60px;
+    margin-top: 50px;
+    @include mq() {
+      padding: 30px 30px 50px;
+    }
+    .btn{
+      background-color: $colorBlack;
+      display: block;
+      max-width: 300px;
+      color: $colorWhite;
+      border-radius: 50px;
+      padding: 10px;
+      margin: 0 auto;
+      text-align: center;
+      &:hover{
+        background-color: $colorPink;
+      }
+    }
+    ul{
+      li{
+        display: table;
+        margin-bottom: 20px;
+        h4{
+          border: solid 1px $colorBlack;
+          width: 200px;
+          display: block;
+          padding: 5px 10px;
+          text-align: center;
+          display: table-cell;
+          vertical-align: middle;
+        }
+        p{
+          display: table-cell;
+          padding-left: 20px;
+          vertical-align: middle;
+          span{
+            display: block;
+            margin-top: 10px;
+          }
+        }
+        @include mq() {
+          display: block;
+          h4{
+            width: 100%;
+            margin-bottom: 10px;
+            display: block;
+          }
+          p{
+            display: block;
+            margin-left: 0;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/*====================*/
+/*NEWS*/
+/*====================*/
+.ari_song__news{
+  .ari_song__heading{
+    h2{
+      color: $colorBlue;
+      &::before{
+        background-color: $colorBlue;
+      }
+    }
+  }
+  .ari_song__detail{
+    .new{
+        background-color: $colorRed;
+        color: $colorWhite;
+        font-size: 12px;
+        padding: 2px 10px;
+        line-height: 1;
+        display: inline-block;
+        border-radius: 50px;
+        position: relative;
+        top: -2px;
+      }
+    ul{
+      li{
+        background-color: $colorWhite;
+        border-top: solid 1px $colorBlack;
+        border-left: solid 1px $colorBlack;
+        border-right: solid 1px $colorBlack;
+        position: relative;
+        &.news--link{
+          a{
+            display: block;
+            padding: 30px;
+            position: relative;
+            &:hover{
+              background-color: $colorBlue;
+            }
+          }
+          @include mq() {
+            a{
+              padding: 15px;
+            }
+          }
+        }
+        &:last-child{
+          border-bottom: solid 1px $colorBlack;
+        }
+        .accordion_header{
+          padding: 30px;
+          transition: all 0.3s;
+
+          position: relative;
+          @include mq() {
+            padding: 15px 35px 15px 15px;
+          }
+          .op_plus{
+            position: absolute;
+            transform: translate(0, -50%);
+            right: 10px;
+            top: 50%;
+
+            width: 50px;
+            height: 50px;
+            margin: 0 5px;
+            @include mq() {
+              width: 30px;
+              height: 30px;
+              margin: 0;
+            }
+            &:before, &:after {
+              position: absolute;
+              content: "";
+              display: block;
+              transition: all 0.4s;
+              background: $colorBlack;
+              left: 50%;
+              top: 50%;
+              width: 50%;
+              height: 2px;
+              transform: translate(-50%, -50%);
+            }
+            &:before {
+              transform: translate(-50%, -50%) rotate(90deg);
+            }
+          }
+          &.open{
+            background-color: $colorBlue;
+            transition: all 0.3s;
+            .op_plus{
+              &:before {
+                transform: translate(-50%, -50%) rotate(0deg);
+              }
+            }
+          }
+          &:hover{
+            background-color: $colorBlue;
+          }
+          
+        }
+        .accordion_inner{
+          border-top: solid 1px $colorBlack;
+          padding: 30px;
+          background-color: $colorBlue;
+          display: none;
+          @include mq() {
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/*====================*/
+/*SCHEDULE*/
+/*====================*/
+.ari_song__schedule{
+  .ari_song__heading{
+    h2{
+      color: $colorOrange;
+      &::before{
+        background-color: $colorOrange;
+      }
+    }
+  }
+  .ari_song__detail{
+      ul{
+        margin-bottom: 10px;
+        li{
+            background-color: $colorWhite;
+            border-top: solid 1px $colorBlack;
+            border-left: solid 1px $colorBlack;
+            border-right: solid 1px $colorBlack;
+            padding: 20px;
+            position: relative;
+            &:last-child{
+              border-bottom: solid 1px $colorBlack;
+            }
+            div{
+              position: relative;
+              z-index: 4;
+            }
+            .data{
+              font-size: 20px;
+              font-weight: bold;
+              line-height: 2;
+              @include mq() {
+                font-size: 18px;
+                line-height: 1.6;
+              }
+              .btn{
+                font-weight: normal;
+                font-size: 15px;
+                text-align: center;
+                background-color: $colorOrange;
+                color: $colorWhite;
+                padding: 5px 20px;
+                border-radius: 50px;
+                line-height: 1;
+                display: inline-block;
+                position: relative;
+                top: -5px;
+                margin-left: 20px;
+                &:hover{
+                  background-color: $colorBlack;
+                }
+              }
+            }
+            .time{
+              font-size: 14px;
+            }
+            .rightText{
+              font-size: 40px;
+              position: absolute;
+              right: 20px;
+              top: 50%;
+              transform: translate(0, -50%);
+              color: #E5E5E5;
+              @include mq() {
+                top: initial;
+                bottom: 10px;
+                transform: translate(0, 0);
+              }
+            }
+        }
+      }
+  }
+}
+
+
+
+
+/*====================*/
+/*TICKET*/
+/*====================*/
+.ari_song__ticket{
+  .ari_song__heading{
+    h2{
+      color: $colorPink;
+      &::before{
+        background-color: $colorPink;
+      }
+    }
+  }
+  
+  dl{
+    background-color: $colorWhite;
+    border: solid 1px $colorBlack;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    dt{
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      .ticket--fc{
+       p{
+        background-color: $colorRed;
+        color: $colorWhite;
+        font-size: 12px;
+        border-radius: 50px;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        position: relative;
+        margin-right: 20px;
+        span{
+          position: absolute;
+          right: 50%;
+          top: 50%;
+          transform: translate(50%, -50%);
+        }
+       }
+      }
+    }
+    dd{
+      font-size: 50px;
+      font-weight: bold;
+      span{
+        font-size: 18px;
+        font-weight: normal;
+      }
+    }
+  }
+  @include mq() {
+        dl{
+          padding: 15px;
+          display: block;
+          dt{
+            font-size: 15px;
+          }
+          dd{
+            font-size: 35px;
+            text-align: right;
+            span{
+              font-size: 15px;
+            }
+          }
+        }
+  }
+
+
+}
+
+
+
+
+
+/*====================*/
+/*GUIDELINE*/
+/*====================*/
+.ari_song__guideline{
+  .ari_song__heading{
+    h2{
+      color: $colorGray;
+      &::before{
+        background-color: $colorGray;
+      }
+    }
+  }
+  p{
+    font-size: 14px;
+    line-height: 2rem;
+  }
+  a{
+    color: $colorPink;
+  }
+  @include mq() {
+    p{
+      font-size: 13px;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+
+
+
+
+/*====================*/
+/*GOODS*/
+/*====================*/
+
+.ari_song__goods{
+  .ari_song__heading{
+    h2{
+      color: $colorGreen;
+      &::before{
+        background-color: $colorGreen;
+      }
+    }
+  }
+
+
+  &--list{
+    // justify-content: center;
+    align-items: flex-end;
+    li{
+      width: calc(25% - 15px);
+      margin-right: 20px;
+      margin-bottom: 20px;
+      div{
+        text-align: center;
+        background-color: $colorWhite;
+        border: solid 1px $colorBlack;
+        padding: 10px;
+        p{
+          margin-top: 10px;
+          font-size: 15px;
+        }
+      }
+      &:nth-child(4n){
+        margin-right: 0;
+      }
+    }
+    @include mq() {
+          li{
+            width: calc(50% - 15px);
+            div{
+              p{
+                font-size: 12px;
+              }
+            }
+            &:nth-child(2n){
+              margin-right: 0;
+            }
+          }
+    }
+    
+  }
+  .andmore{
+    font-weight: bold;
+    text-align: right;
+    font-size: 25px;
+  }
+  .comingsoon{
+    text-align: center;
+    font-size: 40px;
+    color: $colorGray;
+  }
+  
+}
+
+
+/*====================*/
+/*footer*/
+/*====================*/
+.ari_song__official{
+  text-align: center;
+  border-top: 1px solid $colorBlack;
+  border-bottom: 1px solid $colorBlack;
+  a{
+      display: block;
+      padding: 50px 10px;
+      position: relative;
+      font-size: 40px;
+      span{
+        font-size: 20px;
+        margin-left: 10px;
+        display: inline-block;
+      }
+      @include mq() {
+        font-size: 30px;
+        padding: 30px 10px;
+        span{
+          font-size: 15px;
+          margin-left: 0;
+          display: block;
+        }
+      }
+      &::after{
+        content: "";
+        transition: all 0.3s;
+        display: inline-block;
+        background-image: url("../img/ico_arrow.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 80px;
+        height: 9px;
+        position: absolute;
+        top:50%;
+        left: 20px;
+        transform: translate(0, -50%);
+      }
+      &::before {
+        background: $colorRed;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        transform: scale(0, 1);
+        transform-origin: left top;
+        transition: .5s cubic-bezier(0.45, 0, 0.55, 1);
+        z-index: -1;
+      }
+      &:hover{
+        opacity: 1;
+        &::after{
+          left: 10px;
+        }
+        &::before {
+          transform: scale(1, 1);
+        }
+      }
+  }
+}
+
+
+footer{
+  // background-color: $colorBlue;
+  color: $colorBlack;
+  padding: 30px 10px 140px;
+  .ari_song__copyright{
+    text-align: center;
+    font-size: 12px;
+    a{
+      color: $colorBlack;
+    }
+  }
+  @include mq() {
+    padding: 30px 10px 200px;
+  }
+}
+
+
+
+/*====================*/
+/*pagetop*/
+/*====================*/
+.ari_song__pagetop{
+  position: fixed;
+  z-index: 999;
+  bottom: 40px;
+  right: 40px;
+  a{
+    position: relative;
+    display: block;
+    &::before{
+      content: "";
+      transition: all 0.3s;
+      display: inline-block;
+      background-image: url("../img/pageto_text.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      // top:50%;
+      // left: 50%;
+      top: -25px;
+      left: -26px;
+      transform: translate(-50%, -50%);
+      animation: r2 10s linear infinite;
+        
+    }
+  }
+  
+}
+@keyframes r2 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+
+/*====================*/
+/*sns*/
+/*====================*/
+
+.ari_song__share{
+  position: fixed;
+  z-index: 999;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  background-color: $colorBlack;
+  color: $colorWhite;
+  border-radius: 50px;
+  @include mq() {
+    // display: none;
+    width: 40px;
+    bottom: 10px;
+    left: 10px;
+  }
+  li {
+    margin: 0 10px;
+  }
+  &--text {
+    position: relative;
+    writing-mode: vertical-rl;
+    // padding: 25px 15px 0;
+    padding: 25px 12px 0;
+    // @include mq() {
+    //   padding: 15px 15px 0;
+    // }
+    @include mq() {
+      padding: 25px 6px 0;
+    }
+    // .icon-share2 {
+    //   transform: rotate(90deg);
+    //   transform-origin: center;
+    //   display: inline-block;
+    //   position: relative;
+    //   margin-bottom: 10px;
+    // }
+  }
+  &--icons {
+    padding: 15px 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-direction: column;
+    @include mq() {
+      // padding: 15px 15px;
+    }
+    li {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+      text-align: center;
+    }
+    a {
+      span {
+        color: $colorWhite;
+      }
+      &:hover {
+        span {
+          color: $colorBlack;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+/*====================*/
+/*フェードイン*/
+/*====================*/
+
+.fadein {
+    opacity: 0;
+    transform : translate(0, 100px);
+    transition : all 1000ms;
+}
+@media all and (-ms-high-contrast:none){
+	::-ms-backdrop,.fadein {
+        opacity: 1 !important;
+        transform : translate(0, 0) !important;
+	}
+}
+.fadein.scrollin{
+    opacity: 1;
+    transform: translate(0, 0);
+}
