@@ -1,0 +1,591 @@
+// 変数定義
+$guidelineColor: #959595;
+$scheduleColor: #ff6b51;
+$ticketColor: #ff6aaa;
+$goodsColor: #5FDB64;
+
+// mixin
+@mixin frame {
+    border: 1px solid black;
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+}
+
+
+/* common */
+html {
+    //画面いっぱい
+    height: 100%;
+    //ブラウザの種類や状態ごとにフォントサイズを指定
+    font-size: 100%;
+  }
+  
+  body {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    margin: 0;
+    height: 100%;
+    animation: bgchange 25s infinite;
+  }
+  
+  section {
+    margin-top: 105px;
+    z-index: 1;
+  }
+  
+  .fadeIn {  
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: opacity 1s, visibility 1s, transform 1s;
+  }
+
+  /* スクロール時に入るクラス */
+.scrollIn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  
+  img {
+    vertical-align: bottom;
+  }
+  
+  a {
+    color:black;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  article,
+  h1,
+  h2,
+  h4,
+  div,
+  p,
+  ul,
+  li,
+  small {
+    margin: 0;
+  }
+  
+  .font-agenda {
+    font-family: agenda, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .main {
+    width: 100%;
+    padding: 0 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-title {
+      h2 {
+        display: flex;
+        align-items: center;
+        font-size: 2.2rem;
+        padding-bottom: 25px;
+        &::after {
+            border: 1.5px solid black;
+            content: "";
+            width: 100%;
+            margin-left: 20px;
+        }
+      }
+  }
+
+  .btn {
+    color: white;
+    border-radius: 22px;
+    text-align: center;
+  }
+
+  .notes {
+    font-size: 0.75rem;
+    margin: 10px 0 30px 0;
+    line-height: 22px;
+    a {
+        color: $ticketColor;
+    }
+  }
+
+/* header */
+.header {
+    height: 100vh;
+    position: relative;
+    animation: fadeInAnime 3s forwards;
+    z-index: 10;
+    &::after {
+        content: "";
+        transition: all 0.3s;
+        background-color: #F8F8F8;
+        width: 100%;
+        height: 50vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+     > .header__image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        img {
+            max-width: 100%;
+            width: auto;
+        }
+    }
+    .header__menu {
+        font-size: 1rem;
+        text-align: right;
+        position: fixed;
+        top: 18px;
+        right: 19px;
+        color: #000000;
+        line-height: 30px;
+        &-top:hover {
+            color: $guidelineColor;
+        }
+        &-schedule:hover {
+            color: $scheduleColor;
+        }
+        &-ticket:hover {
+            color: $ticketColor;
+        }
+        &-guideline:hover {
+            color: $guidelineColor;
+        }
+    }
+}
+
+/* title */
+.title {
+    text-align: center;
+    > h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+    > p {
+        font-size: 0.95rem;
+        line-height: 2.2;
+    }
+}
+
+/* reception */
+.reception {
+    padding: 30px 30px 50px;
+    background-color: #fff;
+    li {
+        margin-bottom: 20px;
+        > h4 {
+            width: 100%;
+            font-size:1rem;
+            font-weight: normal;
+            text-align: center;
+            padding: 5px 10px;
+            margin: 0 auto 10px;
+            border: 1px solid #17161a;
+            vertical-align: middle;
+        }
+        > p {
+            font-size: 1rem;
+        }
+    }
+    .reception__btn {
+        font-size: 1rem;
+        display: block;
+        height: 45px;
+        width: 300px;
+        line-height: 45px;
+        background-color: black;
+        margin: 45px auto 8px;
+        &:hover {
+            background-color: $ticketColor;
+        }
+    }
+}
+
+/* schedule */
+#schedule {
+    h2 {
+        color: $scheduleColor;
+        &::after {
+            border-color: $scheduleColor;
+        }
+    }
+    li {
+        @include frame;
+        > .schedule__date {
+            font-size: 1.13rem;
+            font-weight: bold;
+            .schedule__link {
+                position: relative;
+                font-weight: normal;
+                padding: 7px 20px;
+                margin-left: 10px;
+                background-color: $scheduleColor;
+                font-size: 0.8rem;
+                vertical-align: top;
+                z-index: 10;
+                &:hover {
+                    background-color: gray;
+                }
+            }
+        }
+        > .schedule__time {
+            font-size: 0.88rem;
+        }
+        > .schedule__city {
+            color: #E5E5E5;
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            font-size: 40px;
+            font-weight: 900;
+            z-index: 1;
+        }
+    }
+    li + li {
+        border-top: none;
+    }
+}
+
+/* ticket */
+#ticket {
+    h2 {
+        color: $ticketColor;
+        &::after {
+            border-color: $ticketColor;
+        }
+    }
+    li {
+        @include frame;
+        > .ticket__type {
+            position: relative;
+            display: flex;
+            align-items: center;
+            > .ticket__limited-icon {
+                position: relative;
+                margin-right: 20px;
+                background-color: #FF5050;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                > span {
+                    font-size: 0.75rem;
+                    color: white;
+                    display: inline-block;
+                    position: absolute;
+                    left: 50%;
+                    top: 30%;
+                    transform: translate(-50%);
+                    width: 80px;
+                    text-align: center;
+                }
+            }
+        }
+        > .ticket__price {
+            font-size: 0.94rem;
+            text-align: right;
+            > span {
+                font-size: 2.19rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/* guideline */
+#guideline {
+    h2 {
+        color: $guidelineColor;
+        &::after {
+            border-color: $guidelineColor;
+        }
+    }
+}
+
+/* goods */
+#goods {
+    h2 {
+        color: $goodsColor;
+        &::after {
+            border-color: $goodsColor;
+        }
+    }
+    > .goods__message {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #959595;
+    }
+}
+
+/* official-website */
+.official-website {
+    margin-top: 200px;
+    padding: 30px 10px;
+    text-align: center;
+    border: 1px solid black;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background-color: inherit;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: #FF5050;
+        z-index: -1;
+        -webkit-transition: 0.6s;
+        transition: 0.6s;
+    }
+    &:hover::before {
+        width: 100%;
+    }
+    > .pageToArrow {
+        width: 60px;
+        height: 40px;
+        position: absolute;
+        top: 40%;
+        left: 40px;
+        transition: 0.3s;
+    }
+    &:hover .pageToArrow {
+        transform: translateX(-20%);
+        transition: 0.3s;
+    }
+    > a {
+        display: block;
+        font-weight: normal;
+        > span {
+            font-size: 30px;
+        }
+    }
+}
+
+/* footer */
+footer {
+    padding: 30px 10px 190px;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+/* share */
+.share-menu {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 2%;
+    left: 1.5%;
+    padding: 25px 12px;
+    border-radius: 25px;
+    text-align: center;
+    vertical-align: center;
+    z-index: 10;
+    > .text {
+        writing-mode: vertical-rl;
+        padding:0 0 5px 4px;
+    }
+    > .share-icon {
+        padding-top: 15px;
+        img {
+            transition-duration: 0.3s;
+        }
+        &:hover img {
+            opacity: 0.6;
+            transition-duration: 0.3s;
+        }
+    }
+}
+
+/* toTop */
+.toTop {
+    text-align: right;
+    > a {
+        position: fixed;
+        bottom: 50px;
+        right: 40px;
+        display: block;
+        z-index: 10;
+        > .toTopText {
+            width: 80px;
+            height: auto;
+            position: fixed;
+            bottom: 20px;
+            right: 15px;
+        }
+    }
+}
+
+/* keyframes */
+@keyframes bgchange {
+    0% {
+      background: #F8F8F8;
+    }
+    25% {
+      background: #d5efff;
+    }
+    50% {
+      background: #ffffc4;
+    }
+    75% {
+      background: #ffe2dc;
+    }
+    90% {
+      background: #ffe1c7;
+    }
+    100% {
+      background: #F8F8F8;
+    }
+  }
+  
+@keyframes fadeInAnime {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+ }
+  
+@keyframes fadeUpAnime {
+    0% {
+    opacity: 0;
+    transform: translateY(100px);
+    }
+    
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+}
+
+/* PC */
+@media(min-width: 768px) {
+    /* common */
+    .main {
+        max-width: 90%;
+        padding: 20px 100px;
+        margin: 0 auto;
+    }
+    .section-title {
+        > h2 {
+            font-size: 3.2rem;
+            &::after {
+                border: 2.5px solid black;
+            }
+        }
+    }
+    /* title */
+    .title {
+        > h2 {
+            font-size: 2.2rem;
+        }
+        > p {
+            font-size: 1.3rem;
+        }
+    }
+    /* reception */
+    .reception {
+        padding: 60px;
+        margin-top: 50px;
+        li {
+            width: 100%;
+            display: table;
+            align-items: center;
+            vertical-align: middle;
+            > h4 {
+                display: table-cell;
+                margin: 0;
+                width: 200px;
+                vertical-align: middle;
+            }
+            > p {
+                padding-left: 10px;
+                > .reception__sp {
+                    display: none;
+                }
+            }
+        }
+    }
+    /* schedule */
+    #schedule {
+        li {
+            .schedule__sp {
+                display: none;
+            }
+            > .schedule__date {
+                font-size: 1.3rem;
+                padding-bottom: 5px;
+            }
+            > .schedule__time {
+                font-size: 0.88rem;
+            }
+            > .schedule__city {
+                position: absolute;
+                top: 25px;
+                right: 15px;
+            }
+        }
+    }
+    /* ticket */
+    #ticket {
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 20px;
+            span {
+                font-size: 46px;
+            }
+        }
+    }
+    /* official-website */
+    .official-website {
+        margin-top: 250px;
+        padding: 60px 10px;
+        > a {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: 20px;
+            > span {
+                font-size: 40px;
+                padding-right: 10px;
+            }
+        }
+    }
+    /* footer */
+    footer {
+        padding: 30px 10px 140px;
+    }
+}
+
+
